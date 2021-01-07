@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require 'ClashApp/ClashApp'
+
+
+
+
+# ClashApp::
+Menu.new.start
+
+
+
