@@ -6,7 +6,7 @@
 # track lists are found https://theaudiodb.com/api/v1/json/1/track.php?m={TADB_Album_ID}
 
 
-# module ClashApp
+
    
     class Albums
         
@@ -26,14 +26,29 @@
 
             end
             
-            puts "Albums:"
-            puts "______________"
+            puts "
+            
+
+  █████  ██      ██████  ██    ██ ███    ███ ███████    
+ ██   ██ ██      ██   ██ ██    ██ ████  ████ ██      ██ 
+ ███████ ██      ██████  ██    ██ ██ ████ ██ ███████    
+ ██   ██ ██      ██   ██ ██    ██ ██  ██  ██      ██ ██ 
+ ██   ██ ███████ ██████   ██████  ██      ██ ███████    
+                                                        
+ ".green
+            puts "______________________".blue
             space
+            space        
+                                                        
+ 
+           
         
             @@album_array.each_with_index { |album, idx| puts "#{idx+1}. #{album[:name]}, #{album[:year]}" }
             space
             space
-            puts "Select album number to learn more!"
+            puts "______________________".blue
+            space        
+            puts "Enter album number to view track list".yellow
             space
             open_album
         end
@@ -42,7 +57,17 @@
             @number = gets
             @number = @number.chomp
             @number = @number.to_i
-            @alb_idx = @number - 1
+            
+            if  @number < 17
+                @alb_idx = @number - 1          
+            elsif @number > 16
+                puts "Please enter a vailid number".red
+                sleep (2)
+                Albums.album_menu
+            else
+                Albums.album_menu
+            end
+
             
             @@alb_id = @@album_array[@alb_idx][:id]
             
@@ -59,103 +84,32 @@
             end
             #  binding.pry
             system ("clear")
-
-            puts @@alb_pretty[1][:album]
-            puts "______________"
+            space
+            puts @@alb_pretty[1][:album].green
+            puts "______________".blue
             @@alb_pretty.each_with_index { |track, idx| puts "#{idx+1}. #{track[:title]}" }
 
             space
+            puts "______________".blue
             space
-            puts "______________"
-
             
-            puts "[1.] Return to main menu"
-            puts "[2.] Select a different album"
-            puts "[3.] Get me out of here!"
+            puts "[1] Return to main menu".yellow
+            puts "[2] Select a different album".yellow
+            puts "[3] Get me out of here!".yellow
 
             choice = gets.strip
             case choice
             when "1"
-                self.main_menu
+                Menu.new.start
             when "2"
                 Albums.album_menu 
             when "3"
-                puts "See ya!"
+                puts "See ya!".red
             end
         end
-        
-        def self.main_menu
-            Menu.new.start
-        end
-        
-        # def self.load
-        #     self.new.start
-        # end
 
+
+        
     end
 
        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #    attr_accessor :name, :tracks
-
-    #    def self.load_data
-    #     ClashApp::Scraper.new.load
-       
-
-
-
-        
-        #which means that when  I instantiate an album 
-        #the album class has to remember all the albums 
-        #in memory so that later on, I can iterate through 
-        #all this instances and find the one that matches 
-        #the name and return it.
-#        end
-
-#   
-      
-
-
-    
-
-
-
-
-
-    

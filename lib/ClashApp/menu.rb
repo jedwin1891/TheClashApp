@@ -1,21 +1,41 @@
-# module ClashApp
+
     class Menu
         
         system ("clear")
-        system 'say "Welcome to the clash app"'
         def start       
             main_menu
         end
    
         def main_menu
+            system ("clear")
             space
-            puts "Welcome to ClashApp!!"
+            puts "  
+            ╔═╗┬  ┌─┐┌─┐┬ ┬╔═╗┌─┐┌─┐┬┬
+            ║  │  ├─┤└─┐├─┤╠═╣├─┘├─┘││
+            ╚═╝┴─┘┴ ┴└─┘┴ ┴╩ ╩┴  ┴  oo 
+            ".green
+            
+           
             space
-            puts "[1] Biography"
-            puts "[2] Albums"
-            puts "[3] Exit"
+            puts "
+            [1] Biography
+            ".yellow
+            puts "
+            [2] Albums
+            ".yellow
+            puts "
+            [3] Top 5 Songs
+            ".yellow
+            puts "
+            [4] Music Videos
+            ".yellow
+            puts "
+            [5] Exit
+            ".yellow
             space
-            puts "Enter number choice"
+            puts "
+            Enter number choice
+            ".green
             
             choice = gets.strip
             case choice
@@ -24,7 +44,11 @@
             when "2"
                 album_page  
             when "3"
-              system 'say "Should I stay or should I go?"'
+                top_tracks
+            when "4"
+                music_vids
+            when "5"
+                #system 'say "Should I stay or should I go?"'
             end
         end
 
@@ -33,89 +57,24 @@
         end
 
         def bio_page
-            Bio.display_bio
+            Bio.getinfo
         end
 
         def album_page
             Albums.album_menu           
         end
+
+        def top_tracks
+            Top.top_menu
+        end
+
+        def music_vids
+            Video.display
+        end
+
+
     end
 
 
 
 
-
-  
-
-
-       
-
-
-
-
-
-
-
-           
-       
-
-        
-            
-
-
-    #     def albums_menu
-    #      # move to the api or response class method
-    #       response = HTTParty.get("http://theaudiodb.com/api/v1/json/1/album.php?i=111450") 
-    #       album_array = response["album"].map do |album|
-
-    #                 {
-    #                     name: album["strAlbum"],
-    #                     year: album["intYearReleased"],
-    #                     id: album["idAlbum"]
-    #                 }
-                    
-    #          end
-
-    #             # binding.pry
-            
-    #             # map over the album array and display dynamically
-    #             puts "Albums:"
-                
-    #             album_array.each_with_index { |album, idx| puts "#{idx+1}. #{album[:name]}, #{album[:year]}" }
-            
-               
-    #             puts "Enter Choice Number:"
-
-    #             # album = ClashApp::Albums.find(album_name)
-    #             # puts "#{album.name} Track List #{album.tracks}"
-    #         end
-    #     end
-    # end
-
-        
-  
-# end
-       
-
-       
-                #     # move to the api or response class method
-                #     response = HTTParty.get("http://theaudiodb.com/api/v1/json/1/search.php?s=the_clash") 
-                #     # better_response = JSON.parse(response)
-                #     bio_array = response["artists"].map do |bio|
-        
-                        
-                    
-        
-                #         {
-                #             bio_en: bio["strBiographyEN"],
-                #             genre: bio["strGenre"],
-                #             id: bio["idArtist"]
-                #         }
-                # #  binding.pry
-                #     end
-
-                #    bio_array.each  { |bio_en| puts "#{bio_en[:bio_en]}" }
-                
-                # main_menu
-       
-                

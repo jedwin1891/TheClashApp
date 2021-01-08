@@ -2,7 +2,7 @@
     class Api
 
         URL          = 'https://www.theaudiodb.com/api/v1/json/523532/'
-        ENDPOINTS    = %W(track search album 111450)
+        ENDPOINTS    = %W(track search album 111450 track-top10 mvid)
         # search_query = '.php?i='
 
 
@@ -32,6 +32,12 @@
             search_url = URL + "track" + '.php?m=' + search_term
             self.call_api(search_url)
         end
+
+        def self.top_search(search_term)
+            search_url = URL + "track-top10-mb" + '.php?s=' + search_term
+            self.call_api(search_url)
+        end
+
 
 
       

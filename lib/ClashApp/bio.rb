@@ -1,107 +1,127 @@
-# module ClashApp
+
     class Bio
         def self.space
             puts " "
         end
-
-        def self.display_bio  
-            system ("clear")
-            puts "Biography:"
-            puts "______________________"
-            space
-            space
-            
-
-
+        def self.getinfo
             response = Api.search_endpoint('artist', '111450')
-            bio_array = response["artists"].map do |bio|
-
-                      {
+            @@bio_array = response["artists"].map do |bio|
+                     {
                            bio_en: bio["strBiographyEN"],
+                           bio_es: bio["strBiographyES"],
                           genre: bio["strGenre"],
                              id: bio["idArtist"]
-                     }
-        
+                     }       
                 end
+             menu
+        end
 
-              bio_array.each  { |bio_en| puts "#{bio_en[:bio_en]}" }
+        def self.menu  
+            system ("clear")
+            space
+            puts "
+            Select Language
+            ".green
+            puts "
+            [1] English
+            ".yellow
+            puts "
+            [2] Español
+            ".yellow
+            puts "
+            [3] Main menu
+            ".yellow
+         
+
+            choice = gets.strip
+            case choice 
+            when "1"
+                english
+            when "2"
+                spanish
+            when "3"
+                Menu.new.start
+            end
+        end
+        
+        def self.english
+            system ("clear")
+            puts "
+
+
+██████  ██  ██████   ██████  ██████   █████  ██████  ██   ██ ██    ██    
+██   ██ ██ ██    ██ ██       ██   ██ ██   ██ ██   ██ ██   ██  ██  ██  ██ 
+██████  ██ ██    ██ ██   ███ ██████  ███████ ██████  ███████   ████      
+██   ██ ██ ██    ██ ██    ██ ██   ██ ██   ██ ██      ██   ██    ██    ██ 
+██████  ██  ██████   ██████  ██   ██ ██   ██ ██      ██   ██    ██       
+                                                                         
+                                                                         
+            
+            ".green
+            puts "______________________".blue
+            space
+            space                   
+            @@bio_array.each  { |bio_en| puts "#{bio_en[:bio_en]}" }
       
              space
              space
-             puts "______________________"
+             puts "______________________".blue
              space
-             puts "[1.] Return to Main Menu"
-             puts "[2.] Go to Albums"
-             puts "[3.] Get me out of here!"
+             puts "[1] View in Spanish".yellow
+             puts "[2] Main menu".yellow
+             puts "[3] Get me out of here!".yellow
 
             choice = gets.strip
             case choice
             when "1"
-               self.main_menu
+                spanish
             when "2"
-               Albums.album_menu 
+                Menu.new.start
             when "3"
-               puts "See ya!"
+               puts "See ya!".red
             end
         end
+
+        def self.spanish
+            system ("clear")
+            puts "
+
+██████  ██  ██████   ██████  ██████   █████  ███████  █████  
+██   ██ ██ ██    ██ ██       ██   ██ ██   ██ ██      ██   ██ 
+██████  ██ ██    ██ ██   ███ ██████  ███████ █████   ███████ 
+██   ██ ██ ██    ██ ██    ██ ██   ██ ██   ██ ██      ██   ██ 
+██████  ██  ██████   ██████  ██   ██ ██   ██ ██      ██   ██ 
+                                                             
+                                                             
+".green
+    
+            puts "______________________".blue
+            space
+            space                   
+            @@bio_array.each  { |bio_es| puts "#{bio_es[:bio_es]}" }
+            space
+            space
+            puts "______________________".blue
+            space
+            puts "[1] Ver en English".yellow
+            puts "[2] Menú principal".yellow
+            puts "[3] ¡Sácame de aquí!".yellow
+
+           choice = gets.strip
+           case choice
+           when "1"
+               english
+           when "2"
+               Menu.new.start
+           when "3"
+              puts "¡adiós!".red
+           end
+        end
+
+
+
     end
 
 
    
       
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#         def bio_page
-#             # move to the api or response class method
-#             response = HTTParty.get("http://theaudiodb.com/api/v1/json/1/search.php?s=the_clash") 
-#             # better_response = JSON.parse(response)
-#             bio_array = response["artists"].map do |bio|
-
-#                 {
-#                     bio_en: bio["strBiographyEN"],
-#                     genre: bio["strGenre"],
-#                     id: bio["idArtist"]
-#                 }
-        
-#             end
-
-#            bio_array.each  { |bio_en| puts "#{bio_en[:bio_en]}" }
-#         end
-
-        
-        
-#     end
-
-   
-# # end
-       
-
-           
-  
-    
-
-
-
-        
