@@ -1,8 +1,8 @@
 # ClashApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ClashApp`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to ClashApp!! 
 
-TODO: Delete this and the text above, and describe your gem
+
 
 ## Installation
 
@@ -20,9 +20,26 @@ Or install it yourself as:
 
     $ gem install ClashApp
 
+
+Once you install this, enter './bin/ClashApp' in your terminal to run!   
+
+
 ## Usage
 
-TODO: Write usage instructions here
+This application allows you to view information on The Clash, the only band that matters!
+
+You will be able to access informaton about the band, through the biography page, the biography is available in either English or Spanish. 
+
+Next you can select Albums, where you will see a list of all of The Clash's albums and compilations. If you select an album it will bring you to the terack list.
+
+On the Top 5 page, you can view the bands 5 biggest hits. If you select one of these songs it will bring you to a description of this song, with some background information as well. 
+
+The final selection on the menu is Music Videos. This page lists all of the songs that have music videos. There will also be a URL for each video. To access the URL simply, CTR + Click, this will give you the option to "open url".
+
+Hope you enjoy!
+
+
+
 
 ## Development
 
@@ -32,7 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ClashApp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ClashApp/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/jedwin1891/TheClashApp. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ClashApp/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
