@@ -79,9 +79,9 @@ class Top
     def self.options
         puts "______________________".blue
         space       
-        puts "[1.] Return to main menu".yellow
-        puts "[2.] Select a different track".yellow
-        puts "[3.] Get me out of here!".yellow
+        puts "[1] Return to main menu".yellow
+        puts "[2] Select a different track".yellow
+        puts "[3] Get me out of here!".yellow
 
             choice = gets.strip
             case choice
@@ -90,7 +90,7 @@ class Top
             when "2"
                 Top.top_menu   
             when "3"
-                puts "See ya!".red
+                Menu.exit
             end
                    
     end

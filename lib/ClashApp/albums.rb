@@ -104,7 +104,7 @@
             when "2"
                 Albums.album_menu 
             when "3"
-                puts "See ya!".red
+                Menu.exit
             end
         end
 

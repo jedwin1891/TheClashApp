@@ -78,7 +78,7 @@
             when "2"
                 Menu.new.start
             when "3"
-               puts "See ya!".red
+               Menu.exit
             end
         end
 
@@ -114,7 +114,7 @@
            when "2"
                Menu.new.start
            when "3"
-              puts "¡adiós!".red
+              Menu.es_exit
            end
         end
 

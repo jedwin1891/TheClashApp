@@ -18,23 +18,24 @@
            
             space
             puts "
-            [1] Biography
+                [1] Biography
             ".yellow
             puts "
-            [2] Albums
+                [2] Albums
             ".yellow
             puts "
-            [3] Top 5 Songs
+                [3] Top 5 Songs
             ".yellow
             puts "
-            [4] Music Videos
+                [4] Music Videos
             ".yellow
             puts "
-            [5] Exit
+                [5] Exit
             ".yellow
             space
             puts "
-            Enter number choice
+            Input a number choice, 
+            then press enter. 
             ".green
             
             choice = gets.strip
@@ -48,7 +49,7 @@
             when "4"
                 music_vids
             when "5"
-                #system 'say "Should I stay or should I go?"'
+                Menu.exit
             end
         end
 
@@ -71,6 +72,22 @@
         def music_vids
             Video.display
         end
+
+        def self.es_exit
+            system ('clear')
+            font = TTY::Font.new(:doom)
+            pastel = Pastel.new 
+            puts pastel.green(font.write("adios"))
+        end
+
+        def self.exit
+            system ('clear')
+            font = TTY::Font.new(:doom)
+            pastel = Pastel.new
+            puts pastel.green(font.write("Goodbye!!"))
+        end
+
+
 
 
     end

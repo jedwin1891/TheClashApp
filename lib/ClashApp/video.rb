@@ -51,7 +51,7 @@ class Video
             when "1"
                 Menu.new.start  
             when "2"
-                puts "See ya!".red
+                Menu.exit
             end
                    
     end
