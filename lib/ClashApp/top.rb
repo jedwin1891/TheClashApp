@@ -45,9 +45,9 @@ class Top
 
     def self.track_info
         
-        @number = gets
-        @number = @number.chomp
-        @number = @number.to_i
+        @number = gets.chomp.to_i
+        # @number = @number.chomp
+        # @number = @number.to_i
         
         if @number < 6
             @trk_id = @number - 1
@@ -83,14 +83,17 @@ class Top
         puts "[2] Select a different track".yellow
         puts "[3] Get me out of here!".yellow
 
-            choice = gets.strip
-            case choice
-            when "1"
+            choice = gets.chomp.to_i
+            if choice == 1
                 Menu.new.start
-            when "2"
-                Top.top_menu   
-            when "3"
+            elsif choice == 2
+                Top.top_menu
+            elsif choice == 3
                 Menu.exit
+            else
+                puts "Please enter a vailid number".red
+                sleep (2)
+                Top.track_info
             end
                    
     end

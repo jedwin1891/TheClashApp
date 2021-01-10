@@ -33,14 +33,17 @@
             ".yellow
          
 
-            choice = gets.strip
-            case choice 
-            when "1"
+            choice = gets.strip.to_i
+            if choice == 1
                 english
-            when "2"
+            elsif choice == 2
                 spanish
-            when "3"
+            elsif choice == 3
                 Menu.new.start
+            else
+                puts "Please enter a vailid number".red
+                sleep (2)
+                menu
             end
         end
         
@@ -71,14 +74,17 @@
              puts "[2] Main menu".yellow
              puts "[3] Get me out of here!".yellow
 
-            choice = gets.strip
-            case choice
-            when "1"
+            choice = gets.strip.to_i
+            if choice == 1
                 spanish
-            when "2"
+            elsif choice == 2
                 Menu.new.start
-            when "3"
-               Menu.exit
+            elsif choice == 3
+                Menu.exit
+            else
+                puts "Please enter a vailid number".red
+                sleep (2)
+                english
             end
         end
 
@@ -107,14 +113,17 @@
             puts "[2] Menú principal".yellow
             puts "[3] ¡Sácame de aquí!".yellow
 
-           choice = gets.strip
-           case choice
-           when "1"
+           choice = gets.strip.to_i
+           if choice == 1
                english
-           when "2"
+           elsif choice == 2
                Menu.new.start
-           when "3"
-              Menu.es_exit
+           elsif choice == 3
+               Menu.exit
+           else
+               puts "por favor ingrese un número valido".red
+               sleep (2)
+               spanish
            end
         end
 
