@@ -31,8 +31,7 @@ class Video
                  link: mvids["strMusicVid"],
                  id: mvids["idAlbum"]
              }
-            end
-        #@url = @@vid_array[]     
+            end     
         @@vid_array.each { |mvids, idx| puts TTY::Link.link_to("#{mvids[:title]}", "#{mvids[:link]}".blue) }
 
         puts "To open URL, CTRL + click.".red
@@ -53,6 +52,22 @@ class Video
             when "2"
                 Menu.exit
             end
+            choice = gets.chomp.to_i
+            if choice == 1
+                Menu.new.start
+            elsif choice == 2
+                Menu.exit
+            else
+                puts "Please enter a vailid number".red
+                sleep (2)
+                system ('clear')
+                Video.display
+            end
+
+        
+            
+
+
                    
     end
 

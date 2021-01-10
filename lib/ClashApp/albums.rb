@@ -1,14 +1,4 @@
-# I want this to:
-# store albums
-# I want each album to store a description
-# I want each album to store a track list 
-# Albums and descriptions are found here https://theaudiodb.com/api/v1/json/1/album.php?i=111450
-# track lists are found https://theaudiodb.com/api/v1/json/1/track.php?m={TADB_Album_ID}
-
-
-
-   
-    class Albums
+ class Albums
         
         def self.space
             puts " "
@@ -54,10 +44,7 @@
         end
 
         def self.open_album
-            @number = gets
-            @number = @number.chomp
-            @number = @number.to_i
-            
+            @number = gets.chomp.to_i            
             if  @number < 17
                 @alb_idx = @number - 1          
             elsif @number > 16
@@ -97,19 +84,20 @@
             puts "[2] Select a different album".yellow
             puts "[3] Get me out of here!".yellow
 
-            choice = gets.strip
-            case choice
-            when "1"
+            choice = gets.strip.to_i
+
+            if choice == 1
                 Menu.new.start
-            when "2"
-                Albums.album_menu 
-            when "3"
+            elsif choice == 2
+                Albums.album_menu
+            elsif choice == 3
                 Menu.exit
+            else
+                puts "Please enter a vailid number".red
+                sleep (2)
+                Albums.open_album
             end
         end
-
-
-        
-    end
+end
 
        
