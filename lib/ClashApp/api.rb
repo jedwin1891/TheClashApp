@@ -1,13 +1,13 @@
 
     class Api
-
-        URL          = 'https://www.theaudiodb.com/api/v1/json/523532/'
-        ENDPOINTS    = %W(track search album 111450 track-top10 mvid)
-        
+                  
+        URL          = "https://www.theaudiodb.com/api/v1/json/523532/"
+        ENDPOINTS    = %W(track search album 111450 track-top10 mvid )
+                
 
 
         def self.get_endpoint(endpoint)
-            new_url = URL + '.php?i=' + endpoint 
+            new_url = URL + '/.php?i=' + endpoint 
             self.call_api(new_url)
 
         end
