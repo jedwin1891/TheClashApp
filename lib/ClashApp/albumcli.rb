@@ -31,9 +31,11 @@
             open_album
             
         end
+   
+
 
         def self.open_album
-            @number = gets.chomp.to_i            
+            @number = gets.chomp.to_i           
             if  @number < 17
                 @alb_idx = @number - 1          
             else    
@@ -84,7 +86,10 @@
                 AlbumCli.open_album
             end
         end
-end
+    end
+
+   
+
 
 
        
