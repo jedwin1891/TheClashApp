@@ -6,15 +6,17 @@ require 'colorize'
 require 'tty-link'
 require 'tty-font'
 require 'pastel'
-# require 'Dotenv'
+require 'json'
 require 'ClashApp/version'
 require 'ClashApp/menu'
-require 'ClashApp/albums'
+require 'ClashApp/albumcli'
+require 'ClashApp/album'
 require 'ClashApp/bio'
 require 'ClashApp/api'
 require 'ClashApp/top'
 require 'ClashApp/video'
-
+require 'ClashApp/biocli'
+require 'ClashApp/topcli'
 
 
 module ClashApp

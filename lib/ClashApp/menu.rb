@@ -3,10 +3,13 @@
         
         system ("clear")
         def start       
-            main_menu
+            Api.get_albums
+            Api.get_bio
+            Api.get_top
+            Menu.main_menu
         end
-   
-        def main_menu
+        
+        def self.main_menu
             system ("clear")
             space
             puts "  
@@ -52,28 +55,28 @@
             else 
                 puts "Please enter a valid number".red
                 sleep (2)
-                Menu.new.start
+                Menu.main_menu
             end
 
         end
 
-        def space
+        def self.space
             puts " "
         end
 
-        def bio_page
-            Bio.getinfo
+        def self.bio_page
+            BioCli.menu
         end
 
-        def album_page
-            Albums.album_menu           
+        def self.album_page
+            AlbumCli.album_menu        
         end
 
-        def top_tracks
-            Top.top_menu
+        def self.top_tracks
+            TopCli.top_menu
         end
 
-        def music_vids
+        def self.music_vids
             Video.display
         end
 
@@ -91,9 +94,6 @@
             puts pastel.green(font.write("Goodbye!!"))
             abort
         end
-
-
-
 
     end
 

@@ -45,16 +45,10 @@ class Video
         puts "[1] Return to main menu".yellow
         puts "[2] Get me out of here!".yellow
 
-            choice = gets.strip
-            case choice
-            when "1"
-                Menu.new.start  
-            when "2"
-                Menu.exit
-            end
+
             choice = gets.chomp.to_i
             if choice == 1
-                Menu.new.start
+                Menu.main_menu
             elsif choice == 2
                 Menu.exit
             else
@@ -64,14 +58,7 @@ class Video
                 Video.display
             end
 
-        
-            
-
-
                    
     end
-
-
-
 
 end

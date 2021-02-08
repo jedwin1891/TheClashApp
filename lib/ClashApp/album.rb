@@ -1,12 +1,14 @@
-class Top
+
+class Album
 
     @@all = []
-   
+
     def self.all 
         @@all.flatten
     end
 
-    def initialize(top_array)
-        @@all << top_array
+    def initialize(album_array)
+        @@all << album_array
     end
+
 end

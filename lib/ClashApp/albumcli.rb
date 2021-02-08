@@ -1,21 +1,12 @@
- class Albums 
-
+ class AlbumCli
+        
         def self.space
             puts " "
         end
-        
+                
         def self.album_menu
+            
             system ('clear')
-            response = Api.search_endpoint('album', '111450') 
-           @@album_array = response["album"].map do |album|
-               {
-                    name: album["strAlbum"],
-                    year: album["intYearReleased"],
-                    id: album["idAlbum"]
-                }
-
-            end
-            cod
             puts "
             
 
@@ -29,11 +20,8 @@
             puts "______________________".blue
             space
             space        
-                                                        
- 
-           
-        
-            @@album_array.each_with_index { |album, idx| puts "#{idx+1}. #{album[:name]}, #{album[:year]}" }
+       
+          Album.all.each_with_index { |album, idx| puts "#{idx+1}. #{album[:name]}, #{album[:year]}" }
             space
             space
             puts "______________________".blue
@@ -41,6 +29,7 @@
             puts "Enter album number to view track list".yellow
             space
             open_album
+            
         end
 
         def self.open_album
@@ -56,7 +45,7 @@
             end
 
             
-            @@alb_id = @@album_array[@alb_idx][:id]
+            @@alb_id = Album.all[@alb_idx][:id]
             
             alb_details = Api.track_search(@@alb_id)
             @@alb_pretty = alb_details["track"].map do |track|
@@ -87,9 +76,9 @@
             choice = gets.strip.to_i
 
             if choice == 1
-                Menu.new.start
+                Menu.main_menu
             elsif choice == 2
-                Albums.album_menu
+                AlbumCli.album_menu
             elsif choice == 3
                 Menu.exit
             else
@@ -99,5 +88,6 @@
             end
         end
 end
+
 
        
