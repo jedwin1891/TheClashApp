@@ -36,12 +36,10 @@
             @number = gets.chomp.to_i            
             if  @number < 17
                 @alb_idx = @number - 1          
-            elsif @number > 16
+            else    
                 puts "Please enter a vailid number".red
                 sleep (2)
-                Albums.album_menu
-            else
-                Albums.album_menu
+                AlbumCli.album_menu
             end
 
             
@@ -58,7 +56,6 @@
                 }
 
             end
-            #  binding.pry
             system ("clear")
             space
             puts @@alb_pretty[1][:album].green
@@ -84,7 +81,7 @@
             else
                 puts "Please enter a vailid number".red
                 sleep (2)
-                Albums.open_album
+                AlbumCli.open_album
             end
         end
 end

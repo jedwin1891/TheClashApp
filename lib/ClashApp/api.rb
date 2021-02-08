@@ -62,9 +62,6 @@
             Bio.new(@@bio_array)
         end
 
-        def self.get_tracklist
-        end
-
         def self.get_top
             @@top_array = Api.top_search('8f92558c-2baa-4758-8c38-615519e9deda')["track"].map do |track|
                 {
