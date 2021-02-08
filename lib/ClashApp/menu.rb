@@ -77,7 +77,7 @@
         end
 
         def self.music_vids
-            Video.display
+            VideoCli.display
         end
 
         def self.es_exit

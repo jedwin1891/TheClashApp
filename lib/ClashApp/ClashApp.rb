@@ -14,7 +14,7 @@ require 'ClashApp/album'
 require 'ClashApp/bio'
 require 'ClashApp/api'
 require 'ClashApp/top'
-require 'ClashApp/video'
+require 'ClashApp/videocli'
 require 'ClashApp/biocli'
 require 'ClashApp/topcli'
 

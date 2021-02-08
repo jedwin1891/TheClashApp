@@ -1,4 +1,4 @@
-class Video 
+class VideoCli 
     
     def self.space
         puts " "
