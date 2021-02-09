@@ -13,7 +13,7 @@ attr_accessor :id, :year, :name, :tracklist
         self.year = album["intYearReleased"]
         self.name = album["strAlbum"]
         getsongs
-        self.tracklist = @@songs
+        self.tracklist 
         @@all << self
     end
 
@@ -21,7 +21,7 @@ attr_accessor :id, :year, :name, :tracklist
 
             alb_details = Api.track_search(id)
             
-            @@songs = alb_details["track"].map do |track|
+            @tracklist= alb_details["track"].map do |track|
                 {
                     title: track["strTrack"],
                     album: track["strAlbum"]
