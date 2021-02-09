@@ -1,14 +1,35 @@
 
 class Album
+attr_accessor :id, :year, :name, :tracklist
 
     @@all = []
 
     def self.all 
-        @@all.flatten
+        @@all
     end
 
-    def initialize(album_array)
-        @@all << album_array
+    def initialize(album)
+        self.id = album["idAlbum"]
+        self.year = album["intYearReleased"]
+        self.name = album["strAlbum"]
+        getsongs
+        self.tracklist = @@songs
+        @@all << self
     end
+
+    def getsongs
+
+            alb_details = Api.track_search(id)
+            
+            @@songs = alb_details["track"].map do |track|
+                {
+                    title: track["strTrack"],
+                    album: track["strAlbum"]
+
+                }
+
+             end
+          
+        end
 
 end

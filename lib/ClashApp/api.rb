@@ -38,15 +38,9 @@
 
         def self.get_albums
             response = HTTParty.get(album_search)
-            @@album_array = response["album"].map do |album|
-                {
-                    id: album["idAlbum"],
-                    year: album["intYearReleased"],
-                    name: album["strAlbum"]
-
-                }
+            @@album_array = response["album"].each do |album|
+                Album.new(album)
             end
-            Album.new(@@album_array)
         end
 
         def self.get_bio
