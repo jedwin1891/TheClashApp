@@ -18,7 +18,9 @@ attr_accessor :id, :year, :name, :tracklist
     end
 
     def getsongs
-
+        if @tracklist
+            return @tracklist
+        else 
             alb_details = Api.track_search(id)
             
             @tracklist= alb_details["track"].map do |track|
@@ -29,7 +31,10 @@ attr_accessor :id, :year, :name, :tracklist
                 }
 
              end
-          
+            end
         end
+        
 
-end
+          
+     end
+
